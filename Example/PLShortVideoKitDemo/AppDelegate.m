@@ -10,7 +10,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "PLShortVideoKit/PLShortVideoKit.h"
-
+#import <GT/GT.h>
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //初始化GT
+    GT_DEBUG_INIT;
+    //获取GT隐藏属性
+    GT_DEBUG_HIDDEN;
+    //设置logo显示位置
+    GT_LOGO_POINT_SET(100,300);
+    //设置fileTransferResult在悬浮框显示
+    GT_OC_OUT_DEFAULT_ON_AC(@"fileTransferResult", nil, nil);
+    //展示GT悬浮框
+    GT_AC_SHOW;
+    //设置GT悬浮框header的高度
+    GT_AC_HEADER_HEIGHT_SET(40);
+    //设置输出参数展示在LOG上
+    GT_OUT_WRITE_TO_LOG("App Smoothness", true);
+#pragma mark ---CUP/Memory/Capacity使用情况
+    GT_LOG_D("UTIL","cpuUsage:%f", GT_UTIL_GET_CPU_USAGE);
+    GT_LOG_D("UTIL","usedMemory:%u", GT_UTIL_GET_USED_MEM);
+    GT_LOG_D("UTIL","AppUsedMemory:%u", GT_UTIL_GET_APP_MEM);
+    GT_LOG_D("UTIL","freeMemory:%u", GT_UTIL_GET_FREE_MEM);
+    GT_LOG_D("UTIL","restCapacity:%u", GT_UTIL_CURRENT_CAPACITY);
+    GT_UTIL_RESET_NET_DATA;
+  
     
     // pili 短视频日志系统
     [PLShortVideoKitEnv initEnv];

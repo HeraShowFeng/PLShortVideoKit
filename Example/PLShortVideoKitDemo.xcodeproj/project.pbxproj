@@ -1012,6 +1012,7 @@
 				0A9435791E6CA2E2008845A3 /* Frameworks */,
 				0A94357A1E6CA2E2008845A3 /* Resources */,
 				B051BAB51EADFEF900385FF0 /* ShellScript */,
+				381050AC3984AFBC70ABB185 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1231,6 +1232,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		381050AC3984AFBC70ABB185 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PLShortVideoKitDemo/Pods-PLShortVideoKitDemo-resources.sh",
+				"${PODS_ROOT}/GT/GT.embeddedframework/Resources/GT.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GT.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PLShortVideoKitDemo/Pods-PLShortVideoKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E9D14123EEFFBB620A62CB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1448,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = GDFHW66V92;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PLShortVideoKitDemo",
@@ -1479,7 +1498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GDFHW66V92;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PLShortVideoKitDemo",
